@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	var app={
+		id:"123456",
+		init:function(){
+			document.addEventListener("click",event=>{
+				this.doSometing(event.type);
+			},false)
+		},
+		doSometing:function(type){
+			console.log("Handling "+type+" for "+this.id);
+		}
+	}
+	app.init();
+</script>

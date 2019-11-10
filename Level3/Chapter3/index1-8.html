@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	function Person(name){
+		if(this instanceof Person){
+			this.name=name;
+		}else{
+			throw new Error("必须通过new关键字来调用Person");
+		}
+	}
+	var XiaoMing=new Person("xiaoming");
+	var DaMao=Person.call(XiaoMing,"DaMao");
+	var SanMao=Person("三毛");
+	console.log(XiaoMing);//[Object object]
+	console.log(DaMao);//'undefined'
+	console.log(SanMao);
+</script>

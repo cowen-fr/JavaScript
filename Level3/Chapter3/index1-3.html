@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	function fn(a,b){
+		"use strict";
+		console.log(arguments.length);
+		console.log(a===arguments[0]);
+		console.log(b===arguments[1]);
+		a="c";
+		b="d";
+		console.log(arguments.length);
+		console.log(a===arguments[0]);
+		console.log(b===arguments[1]);
+	}
+	fn("a","b");
+</script>

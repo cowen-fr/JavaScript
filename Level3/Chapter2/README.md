@@ -39,7 +39,7 @@ function getValue(condition){
 }
 ```
 
-#### 2、块级声明：
+#### 2、正则补充：
 
 块级声明用于声明在指定块的作用域之外无法访问的变量。块级作用域存在于：
 
@@ -47,58 +47,28 @@ function getValue(condition){
 
 - 块中（字符{和}之间的区域）：
 
-#### 3、`let`声明：
+#### 3、模板字面量：
 
-`let`声明的用法和`var`相同，用`let`代替`var`来声明变量，就可以把变量的作用域限制在当前代码块中。
+`ES6`通过模板字面量的方式补充了`ES5`中字符串缺少的许多特性：
 
-`let`声明只能声明一次，禁止重复声明。
+- 多行字符串：
 
-```javascript
-var count=30;
-let count=40;
-// Uncaught SyntaxError: Identifier 'count' has already been declared
-```
+- 基本的字符串格式化：
 
-#### 4、`const`声明：
+- HTML转义：
 
-使用`const`声明的是常量，其值一旦被设定后不能被再次修改，而且每一个通过`const`声明的变量必须进行初始化。
+模板字面量使用``符号进行包裹定义。
 
 ```javascript
-const pi=3.14;
-pi=314;
-// Uncaught TypeError: Assignment to constant variable.
+let str=`hello world`;
+typeof str;//string
 ```
 
-必须进行初始化：
+在模板字面量中，占位符是由一个左侧的${}符号组成的，中间包括任何类型的JavaScript表达式。
 
 ```javascript
-const pi;
-pi=3.14;
-// Uncaught SyntaxError: Missing initializer in const declaration
+let content="cowen",
+    desc=`I am ${content}`;
 ```
 
-`const`不允许修改绑定，但是允许修改值，这就意味着可以修改`const`定义的对象的属性值。
 
-#### 5、循环中的块作用域：
-
-在循环函数中使用`var`定义变量，循环结束后，仍然能访问到该变量。
-
-```javascript
-for(var i=0;i<10;i++){
-    console.log(i);// 0 ... 9    
-}
-console.log(i);//10
-```
-
-#### 6、全局块作用域：
-
-`let`和`const`与`var`的另外一个区别是它们在全局作用域中的行为。当`var` 被用于全局作用域时，它会创建一个新的全局变量作为全局对象（浏览器中的`window`对象）的属性。这就意味着`var`很有可能会无意中覆盖一个已经存在的全局属性。
-
-```javascript
-var _name1="cowen";
-let _name2="zheng";
-
-window._name1;//cowen
-
-window._name2;//undefined
-```

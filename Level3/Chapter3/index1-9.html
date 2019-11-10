@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	function Person(name){
+		if(typeof new.target!=="undefined"){
+			this.name=name;
+		}else{
+			throw new Error("必须通过new关键字来调用Person");
+		}
+	}
+	var XiaoMing=new Person("XiaoMing");
+	var DaMing1=Person("DaMing1");
+	var DaMing2=Person.call(XiaoMing,"DaMing2");
+</script>

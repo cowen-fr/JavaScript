@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	function Person(name){
+		this.name=name;
+	}
+	var XiaoMing=new Person("小明");
+	var DaMao=Person("大毛");
+	var SanMao=Person.call(XiaoMing,"SanMao");
+	console.log(XiaoMing);
+	console.log(DaMao);
+	console.log(SanMao);
+</script>
