@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	{
+		let person={
+			getGreeting(){
+				console.log("你好");
+			}
+		}
+		let dog={
+			getGreeting(){
+				console.log("汪汪");
+			}
+		}
+		let xiaoming=Object.create(person);
+		console.log(Object.getPrototypeOf(xiaoming)===person);
+		xiaoming.getGreeting();
+		//更改原型
+		Object.setPrototypeOf(xiaoming,dog);
+		console.log(Object.getPrototypeOf(xiaoming)===dog);
+		xiaoming.getGreeting();
+	}
+</script>
