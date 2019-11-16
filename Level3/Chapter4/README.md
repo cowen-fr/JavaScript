@@ -108,4 +108,21 @@ Object.getProperty(xiaoming)===dog;//true
 xiaoming.getGreeting();//woof;
 ```
 
+- `super()`：
 
+  如果你想重写对象实例的方法，又需要调用与它同名的原型方法，可以使用`super()`。
+
+```javascript
+let person={
+    getGreeting(){
+        return 'Hello';
+    }
+}
+let xiaoMing={
+    getGreeting(){
+        return `${super.getGreeting()} xiaoMing`;
+    }
+}
+Object.setPrototypeOf(xiaoMing,person);
+xiaoMing.getGreeting();//Hello xiaoMing
+```

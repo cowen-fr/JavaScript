@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	{
+		let person={
+			getGreeting(){
+				return "Hello";
+			}
+		}
+		let xiaoMing={
+			getGreeting(){
+				return super.getGreeting()+" xiaoMing";
+			}
+		}
+		Object.setPrototypeOf(xiaoMing,person);
+		console.log(xiaoMing.getGreeting());
+	}
+</script>

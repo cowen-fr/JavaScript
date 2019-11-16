@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	{
+		let person={
+			getGreeting(){
+				console.log("Hello");
+			}
+		}
+		let dog={
+			getGreeting(){
+				console.log("Wolf");
+			}
+		}
+		let xiaoming=Object.create(person);
+		xiaoming.getGreeting();
+		xiaoming.getGreeting=function(){
+			console.log("sdsds");
+		}
+		xiaoming.getGreeting();
+		person.getGreeting()
+	}
+</script>
